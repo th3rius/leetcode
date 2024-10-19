@@ -1,0 +1,17 @@
+# Languages defines the submissions you would like to download are written in which programming languages.
+# Currently, supported values are: bash, c, cpp, golang, java, javascript, python, python3, rust, ruby, scala, swift, typescript.
+# Also, it supports a special value "*", which means all above programming languages.
+languages: "*"
+# Pattern is the naming pattern for your submission file path. It has to be compatible with go template.
+# Available Options:
+#   - .Difficulty - The difficulty of the question.
+#   - .Language - The language that the submission is written in.
+#   - .QuestionName - The question name.
+#   - .QuestionNumber - The question number.
+# Note that you don't need to specify the extension of the submission file because that will be automatically added based on the
+# programming language that the submission is written in.
+# For example, with the following pattern, your go and java solutions of 1.Two Sum question will be saved as:
+# <current_dir>/go/1.two-sum.easy.go
+# <current_dir>/java/1.two-sum.easy.go
+# Note that you don't have to including all the above options in the pattern definition. 
+pattern: "{{ .Language }}/{{ .QuestionNumber }}.{{ .QuestionName }}.{{ .Difficulty }}"
